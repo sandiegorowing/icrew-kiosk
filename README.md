@@ -62,25 +62,42 @@ Configuration instructions for a Raspberry Pi that drives an iCrew kiosk
     ```
 # Scripts to turn the display off and on
 
-## display-off.sh
+## display-power.sh
 ```
 #!/bin/bash
 
 export WAYLAND_DISPLAY=wayland-0
 export XDG_RUNTIME_DIR=/var/run/user/`id -u`
-/usr/bin/wlopm --off \*
+
+usage() {
+    echo "Usage: $0 [on|off]"
+    echo "  Provide a single argument:"
+    echo "    on  - to enable"
+    echo "    off - to disable"
+    exit 1
+}
+
+if [ "$#" -ne 1 ]; then
+    echo "Error: Exactly one argument is required."
+    usage
+fi
+
+# Convert argument to lowercase
+arg=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+
+# Check if argument is 'on' or 'off'
+if [ "$arg" = "on" ] || [ "$arg" = "off" ]; then
+    /usr/bin/wlopm --${arg} \*
+else
+    echo "Error: Invalid argument '$1'."
+    usage
+fi
 ```
 
-## display-on.sh
+# Crontab entry for display management
 ```
-#!/bin/bash
-
-export WAYLAND_DISPLAY=wayland-0
-export XDG_RUNTIME_DIR=/var/run/user/`id -u`
-/usr/bin/wlopm --on \*
-```
-
-# Crontab entry Turn on the display at 0445 each day
-```
-45  4  *   *   *     /home/kiosk/display-on.sh
+# Turn on the display at 0445
+45  4  *   *   *     /home/kiosk/display-power.sh on
+# Turn off the display at 1000
+ 0 10  *   *   *     /home/kiosk/display-power.sh off
 ```
