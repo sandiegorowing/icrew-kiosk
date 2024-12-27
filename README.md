@@ -42,9 +42,8 @@ Date: 2024-12-26
     /usr/bin/lwrespawn /usr/bin/pcmanfm --desktop --profile LXDE-pi &
     /usr/bin/lwrespawn /usr/bin/chromium-browser --start-maximized --fast --fast-start --no-sandbox --no-first-run --noerrdialogs --disable-translate --disable-notifications --disable-session-crashed-bubble --disable-infobars   --check-for-update-interval=604800 --disable-pinch --disable-features=TranslateUI --disk-cache-dir=/dev/null --ozone-platform=wayland --enable-features=OverlayScrollbar --overscroll-history-navigation=0 --window-position=0,0 --incognito --kiosk 'http://example.com/' &
     /usr/bin/kanshi &
+    /usr/bin/swayidle -w timeout 3600 'wlopm --off \*' resume 'wlopm --on \*' &
     /usr/bin/lxsession-xdg-autostart
-    /usr/bin/swayidle -w timeout 3600 'wlopm --off \*' resume 'wlopm --on \*'
-    
     ```
     
 7.  As 'root' edit the file /etc/lightdm and enable the SeatDefaults section as follows
