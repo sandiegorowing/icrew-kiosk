@@ -14,8 +14,7 @@ Configuration instructions for a Raspberry Pi that drives an iCrew kiosk
 
 1.  Build a new Raspbian release on an SD card
     
-2.  Boot the raspberry Pi and follow the instructions to configure the locale, t  
-    imezone, and other standard parameters
+2.  Boot the raspberry Pi and follow the instructions to configure the locale, timezone, and other standard parameters
     
 3.  Create a new user named 'kiosk'
     
