@@ -54,3 +54,27 @@ Date: 2024-12-26
     autologin-user-timeout=0
     user-session=xfce
     ```
+# Scripts to turn the display off and on
+
+## display-off.sh
+```
+#!/bin/bash
+
+export WAYLAND_DISPLAY=wayland-0
+export XDG_RUNTIME_DIR=/var/run/user/`id -u`
+/usr/bin/wlopm --off \*
+```
+
+## display-on.sh
+```
+#!/bin/bash
+
+export WAYLAND_DISPLAY=wayland-0
+export XDG_RUNTIME_DIR=/var/run/user/`id -u`
+/usr/bin/wlopm --on \*
+```
+
+# Crontab entry Turn on the display at 0445 each day
+```
+45  4  *   *   *     /home/kiosk/display-on.sh
+```
