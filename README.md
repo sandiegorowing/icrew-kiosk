@@ -40,14 +40,14 @@ Configuration instructions for a Raspberry Pi that drives an iCrew kiosk
     /usr/bin/lwrespawn /usr/bin/pcmanfm --desktop --profile LXDE-pi &
     /usr/bin/lwrespawn /usr/bin/chromium-browser --start-maximized \
         --fast --fast-start --no-sandbox --no-first-run --noerrdialogs \
-	--disable-translate --disable-notifications \
-	--disable-session-crashed-bubble --disable-infobars \
-	--check-for-update-interval=604800 --disable-pinch \
-	--disable-features=TranslateUI --disk-cache-dir=/dev/null \
-	--ozone-platform=wayland --enable-features=OverlayScrollbar \
-	--overscroll-history-navigation=0 --window-position=0,0 \
-	--incognito \
-	--kiosk 'https://icrew.club/todayview?club=ABC&clubkey=ABCDEFG&clubfid=nn&kioskuser=yourkioskuser' &
+        --disable-translate --disable-notifications \
+        --disable-session-crashed-bubble --disable-infobars \
+        --check-for-update-interval=604800 --disable-pinch \
+        --disable-features=TranslateUI --disk-cache-dir=/dev/null \
+        --ozone-platform=wayland --enable-features=OverlayScrollbar \
+        --overscroll-history-navigation=0 --window-position=0,0 \
+        --incognito \
+        --kiosk 'https://icrew.club/todayview?club=ABC&clubkey=ABCDEFG&clubfid=nn&kioskuser=yourkioskuser' &
     /usr/bin/kanshi &
     /usr/bin/swayidle -w timeout 3600 'wlopm --off \*' resume 'wlopm --on \*' &
     /usr/bin/lxsession-xdg-autostart
