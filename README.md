@@ -32,7 +32,6 @@ Configuration instructions for a Raspberry Pi that drives an iCrew kiosk
     XKBDEFAULT_MODEL=pc105
     XKBDEFAULT_VARIANT= 
     XKBDEFAULT_OPTIONS= 
-    
     ```
     
 6.  Create the file ~kiosk/.config/labwc/autostart containing the following
