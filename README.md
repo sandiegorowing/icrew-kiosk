@@ -4,8 +4,7 @@ Configuration instructions for a Raspberry Pi that drives an iCrew kiosk
 
 # Assumptions
 
-Date: 2024-12-26
-
+*   Date: 2024-12-26
 *   Operating system: Debian GNU/Linux 12 (bookworm)
 *   Windowing System: Wayland
 *   Compositor: Labwc
@@ -28,7 +27,7 @@ Date: 2024-12-26
     
 5.  Create the file ~kiosk/.config/labwc/environment containing the following information
     
-    ```javascript
+    ```
     XKBDEFAULT_LAYOUT=us
     XKBDEFAULT_MODEL=pc105
     XKBDEFAULT_VARIANT= 
