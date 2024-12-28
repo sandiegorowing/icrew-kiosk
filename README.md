@@ -52,13 +52,13 @@ Configuration instructions for a Raspberry Pi that drives an iCrew kiosk
     /usr/bin/lxsession-xdg-autostart
     ```
     
-7.  As 'root' edit the file /etc/lightdm and enable the SeatDefaults section as follows
+7.  As 'root' edit the file /etc/lightdm/lightdm.conf and enable the SeatDefaults section as follows
     
     ```
     [SeatDefaults]
     autologin-user=kiosk
     autologin-user-timeout=0
-    user-session=xfce
+    user-session=LXDE-pi
     ```
 # Scripts to turn the display off and on
 
