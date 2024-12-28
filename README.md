@@ -94,10 +94,25 @@ else
 fi
 ```
 
+## display-force-idle.sh
+
+This script sends SIGUSR1 signal to the running swayidle process then
+enters the 'idle' state and executes instructions for the idle timeout
+set in .config/labwc/autostart.
+```
+#!/bin/bash
+
+export WAYLAND_DISPLAY=wayland-0
+export XDG_RUNTIME_DIR=/var/run/user/`id -u`
+
+/usr/bin/pkill -USR1 "swayidle"  >/dev/null 2>&1
+```
+
+
 # Crontab entry for display management
 ```
 # Turn on the display at 0445
 45  4  *   *   *     /home/kiosk/display-power.sh on
 # Turn off the display at 1000
- 0 10  *   *   *     /home/kiosk/display-power.sh off
+ 0 10  *   *   *     /home/kiosk/display-force-idle.sh
 ```
