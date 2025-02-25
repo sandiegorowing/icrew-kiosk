@@ -116,3 +116,12 @@ export XDG_RUNTIME_DIR=/var/run/user/`id -u`
 # Turn off the display at 1000
  0 10  *   *   *     /home/kiosk/display-force-idle.sh
 ```
+
+# Boot option to enable HDMI hotplug on both HDMI ports of the raspberry pi
+If this line isn't added, the display will not idle properly; i.e., it
+it will briefly go off and within 30 seconds, go on again.
+
+Edit /boot/firmware/cmdline.txt and insert```vc4.force_hotplug=3```.
+```
+vc4.force_hotplug=3 console=serial0,115200 console=tty1 root=PARTUUID=4ac201cd-02 rootfstype=ext4 fsck.repair=yes rootwaitquiet splash plymouth.ignore-serial-consoles
+```
