@@ -121,7 +121,7 @@ export XDG_RUNTIME_DIR=/var/run/user/`id -u`
 If this line isn't added, the display will not idle properly; i.e., it
 it will briefly go off and within 30 seconds, go on again.
 
-Edit /boot/firmware/cmdline.txt and insert```vc4.force_hotplug=3```.
+Edit /boot/firmware/cmdline.txt and insert```vc4.force_hotplug=1```.
 ```
-vc4.force_hotplug=3 console=serial0,115200 console=tty1 root=PARTUUID=4ac201cd-02 rootfstype=ext4 fsck.repair=yes rootwaitquiet splash plymouth.ignore-serial-consoles
+vc4.force_hotplug=1 console=serial0,115200 console=tty1 root=PARTUUID=4ac201cd-02 rootfstype=ext4 fsck.repair=yes rootwaitquiet splash plymouth.ignore-serial-consoles
 ```
