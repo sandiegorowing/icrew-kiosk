@@ -46,7 +46,7 @@ Configuration instructions for a Raspberry Pi that drives an iCrew kiosk
         --ozone-platform=wayland --enable-features=OverlayScrollbar \
         --overscroll-history-navigation=0 --window-position=0,0 \
         --incognito \
-	--force-device-scale-factor=0.7 \
+        --force-device-scale-factor=0.7 \
         --kiosk 'https://icrew.club/todayview?club=ABC&clubkey=ABCDEFG&clubfid=nn&kioskuser=yourkioskuser' &
     /usr/bin/kanshi &
     /usr/bin/swayidle -w timeout 3600 'wlopm --off \*' resume 'wlopm --on \*' &
